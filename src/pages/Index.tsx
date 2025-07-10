@@ -156,22 +156,34 @@ const Index = () => {
 
   const masters = [
     {
-      id: "anna",
-      name: "Анна Петрова",
-      specialization: "Наращивание ресниц, ламинирование",
-      experience: "5 лет",
+      id: "marina",
+      name: "Марина Царёва",
+      specialization: "Инструктор/Руководитель",
+      experience: "10+ лет",
     },
     {
-      id: "elena",
-      name: "Елена Сидорова",
-      specialization: "Перманентный макияж",
+      id: "anastasia",
+      name: "Анастасия Борисова",
+      specialization: "Топ-мастер",
+      experience: "8 лет",
+    },
+    {
+      id: "vladlena",
+      name: "Владлена Рябцева",
+      specialization: "Топ-мастер",
       experience: "7 лет",
     },
     {
-      id: "maria",
-      name: "Мария Иванова",
-      specialization: "Брови, коррекция",
-      experience: "4 года",
+      id: "anna",
+      name: "Анна Журавлёва",
+      specialization: "Топ-мастер",
+      experience: "6 лет",
+    },
+    {
+      id: "viktoria",
+      name: "Виктория Кундина",
+      specialization: "Мастер-стажёр",
+      experience: "2 года",
     },
   ];
 
