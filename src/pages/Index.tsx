@@ -33,56 +33,126 @@ const Index = () => {
   const [selectedService, setSelectedService] = useState("");
   const [selectedMaster, setSelectedMaster] = useState("");
 
-  const services = [
+  const serviceCategories = [
     {
-      id: "lash-extension",
+      id: "lashes",
       name: "Наращивание ресниц",
-      price: "2500₽",
-      duration: "2-3 часа",
+      image:
+        "https://cdn.poehali.dev/files/3128eed5-585b-4e9c-8be5-b45784c51169.jpg",
+      services: [
+        { name: "Классика", price: "2000₽", duration: "2 часа" },
+        { name: "Полуторный объём", price: "2200₽", duration: "2.5 часа" },
+        { name: "Двойной объём", price: "2300₽", duration: "2.5 часа" },
+        { name: "Тройной объём", price: "2500₽", duration: "3 часа" },
+        { name: "Гиперобъём (4D)", price: "2700₽", duration: "3 часа" },
+        { name: "Гиперобъём (5-6D)", price: "2900₽", duration: "3 часа" },
+      ],
+      additional: [
+        { name: "Лучи, Ким", price: "200₽" },
+        { name: "Снятие ресниц без наращивания", price: "300₽" },
+        { name: "Цветные вставки", price: "100₽" },
+        { name: "Праздничные дни", price: "500₽" },
+      ],
     },
     {
-      id: "lash-lamination",
-      name: "Ламинирование ресниц",
-      price: "1800₽",
-      duration: "1.5 часа",
+      id: "top-master",
+      name: "Услуги топ-мастера",
+      image:
+        "https://cdn.poehali.dev/files/2233b12c-46d8-4e36-b7db-98142c9c71db.jpg",
+      services: [
+        { name: "Классика", price: "1900₽", duration: "2 часа" },
+        { name: "Полуторный объём", price: "2000₽", duration: "2.5 часа" },
+        { name: "Двойной объём", price: "2100₽", duration: "2.5 часа" },
+        { name: "Тройной объём", price: "2300₽", duration: "3 часа" },
+        { name: "Гиперобъём (4D)", price: "2500₽", duration: "3 часа" },
+        { name: "Гиперобъём (5-6D)", price: "2700₽", duration: "3 часа" },
+      ],
+      additional: [
+        { name: "Лучи, Ким", price: "200₽" },
+        { name: "Снятие ресниц без наращивания", price: "300₽" },
+        { name: "Цветные вставки", price: "100₽" },
+        { name: "Праздничные дни", price: "500₽" },
+      ],
     },
     {
-      id: "brow-styling",
-      name: "Долговременная укладка бровей",
-      price: "1500₽",
-      duration: "1 час",
+      id: "brows",
+      name: "Брови и ресницы",
+      image:
+        "https://cdn.poehali.dev/files/22467f5c-48d7-43db-900c-24a58b7b1824.jpg",
+      services: [
+        {
+          name: "Коррекция и окрашивание бровей - нить/пинцет",
+          price: "1000₽",
+          duration: "45 мин",
+        },
+        {
+          name: "Коррекция и окрашивание бровей - воск/пинцет",
+          price: "1200₽",
+          duration: "45 мин",
+        },
+        {
+          name: "Коррекция бровей - пинцет/нить",
+          price: "700₽",
+          duration: "30 мин",
+        },
+        {
+          name: "Ламинирование ресниц + BOTOX",
+          price: "1600-1800₽",
+          duration: "1.5 часа",
+        },
+        {
+          name: "Ламинирование нижних ресниц",
+          price: "750₽",
+          duration: "30 мин",
+        },
+        {
+          name: "Долговременная укладка бровей + BOTOX",
+          price: "1600-1900₽",
+          duration: "1.5 часа",
+        },
+      ],
+      additional: [
+        { name: "Прореживание бровей", price: "500₽" },
+        { name: "Окрашивание ресниц", price: "450₽" },
+        { name: "Удаление волос верхняя губа", price: "400₽" },
+        { name: "BOTOX+COLLAGEN+VITAMIN B", price: "400₽" },
+      ],
     },
     {
-      id: "lip-pmu",
-      name: "Перманентный макияж губ",
-      price: "8000₽",
-      duration: "3 часа",
-    },
-    {
-      id: "brow-pmu",
-      name: "Перманентный макияж бровей",
-      price: "7000₽",
-      duration: "2.5 часа",
-    },
-    {
-      id: "brow-correction",
-      name: "Коррекция и окрашивание бровей",
-      price: "1200₽",
-      duration: "45 мин",
-    },
-    {
-      id: "pmu-correction",
-      name: "Коррекция перманента бровей",
-      price: "4000₽",
-      duration: "2 часа",
-    },
-    {
-      id: "pmu-refresh",
-      name: "Обновление перманентного макияжа",
-      price: "5000₽",
-      duration: "2 часа",
+      id: "pmu",
+      name: "Перманентный макияж",
+      image:
+        "https://cdn.poehali.dev/files/0520d55a-61ba-4251-9d8c-200e3fae16de.jpg",
+      services: [
+        {
+          name: "Перманентный макияж бровей (Пудра)",
+          price: "7000₽",
+          duration: "3 часа",
+        },
+        {
+          name: "Коррекция перманента бровей",
+          price: "3000₽",
+          duration: "2 часа",
+        },
+        {
+          name: "Обновление перманентного макияжа бровей",
+          price: "4000₽",
+          duration: "2 часа",
+        },
+        { name: "Консультация", price: "500₽", duration: "30 мин" },
+      ],
     },
   ];
+
+  const services = serviceCategories.flatMap((category) =>
+    category.services.map((service) => ({
+      id: `${category.id}-${service.name.toLowerCase().replace(/\s+/g, "-")}`,
+      name: service.name,
+      price: service.price,
+      duration: service.duration,
+      category: category.name,
+    })),
+  );
 
   const masters = [
     {
@@ -106,7 +176,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-white">
       {/* Header */}
       <header className="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
@@ -153,7 +223,7 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-pink-100/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-amber-100/50"></div>
         <div className="container mx-auto px-4 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
@@ -224,7 +294,10 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-white">
+      <section
+        id="services"
+        className="py-20 bg-gradient-to-br from-orange-50 to-amber-50"
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
@@ -235,36 +308,54 @@ const Index = () => {
               красоты
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {services.map((service) => (
+          <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-8">
+            {serviceCategories.map((category) => (
               <Card
-                key={service.id}
-                className="hover:shadow-lg transition-shadow duration-300 group"
+                key={category.id}
+                className="overflow-hidden hover:shadow-2xl transition-all duration-300 group bg-white/80 backdrop-blur-sm"
               >
-                <CardHeader>
-                  <div className="flex items-center space-x-2 mb-2">
-                    <Icon name="Sparkles" className="text-primary" size={20} />
-                    <Badge variant="secondary" className="text-xs">
-                      {service.duration}
-                    </Badge>
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={category.image}
+                    alt={category.name}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-white font-bold text-lg mb-1">
+                      {category.name}
+                    </h3>
+                    <p className="text-white/90 text-sm">
+                      {category.services.length} услуг
+                    </p>
                   </div>
-                  <CardTitle className="text-lg group-hover:text-primary transition-colors">
-                    {service.name}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-primary">
-                      {service.price}
-                    </span>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="opacity-0 group-hover:opacity-100 transition-opacity"
-                    >
-                      Выбрать
-                    </Button>
+                </div>
+                <CardContent className="p-6">
+                  <div className="space-y-3">
+                    {category.services.slice(0, 3).map((service, index) => (
+                      <div
+                        key={index}
+                        className="flex justify-between items-center"
+                      >
+                        <span className="text-gray-700 text-sm">
+                          {service.name}
+                        </span>
+                        <span className="text-primary font-semibold text-sm">
+                          {service.price}
+                        </span>
+                      </div>
+                    ))}
+                    {category.services.length > 3 && (
+                      <div className="text-center pt-2">
+                        <span className="text-gray-500 text-sm">
+                          +{category.services.length - 3} ещё
+                        </span>
+                      </div>
+                    )}
                   </div>
+                  <Button className="w-full mt-6 bg-primary hover:bg-primary/90">
+                    Подробнее
+                  </Button>
                 </CardContent>
               </Card>
             ))}

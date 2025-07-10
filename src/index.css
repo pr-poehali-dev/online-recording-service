@@ -15,12 +15,15 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 343 87% 55%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 28 100% 36%;
+    --primary-foreground: 0 0% 100%;
 
-    --beauty-pink: 343 87% 55%;
-    --beauty-dark: 215 25% 17%;
-    --beauty-light: 210 40% 98%;
+    --beauty-brown: 28 100% 36%;
+    --beauty-beige: 40 25% 85%;
+    --beauty-dark: 20 15% 25%;
+    --beauty-light: 40 30% 95%;
+    --beauty-gold: 45 80% 65%;
+    --beauty-cream: 45 20% 92%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
